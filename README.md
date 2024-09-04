@@ -1,1 +1,1 @@
-# micro-frontend-demo We will be creating a mono-repo to create MFEs to manage online lego store application
+# micro-frontend-demo We will be creating a mono-repo to create MFEs to manage online lego online store application
