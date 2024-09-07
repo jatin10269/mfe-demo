@@ -62,8 +62,8 @@
     "serve": {
       "executor": "@nx/angular:dev-server",
       "options": {
-
-        "publicHost": "https://mfe-demo2.onrender.com/"
+        "port": 4201,
+        "publicHost": "http://localhost:4201"
       },
       "configurations": {
         "production": {
@@ -96,7 +96,7 @@
       "defaultConfiguration": "production",
       "options": {
         "buildTarget": "login:build",
-
+        "port": 4201,
         "watch": false
       },
       "configurations": {
