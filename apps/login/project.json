@@ -11,6 +11,7 @@
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/login",
+        "baseHref":"apps/login",
         "index": "apps/login/src/index.html",
         "main": "apps/login/src/main.ts",
         "polyfills": ["zone.js"],
