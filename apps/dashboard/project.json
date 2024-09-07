@@ -11,7 +11,7 @@
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/dashboard",
-        "baseHref":"/dashboard/",
+        "baseHref":"/apps/dashboard/",
         "index": "apps/dashboard/src/index.html",
         "main": "apps/dashboard/src/main.ts",
         "polyfills": ["zone.js"],
