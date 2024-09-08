@@ -18,10 +18,8 @@
         "tsConfig": "apps/dashboard/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
-          {
-            "glob": "**/*",
-            "input": "apps/dashboard/public"
-          }
+          "apps/dashboard/src/favicon.ico",
+          "apps/dashboard/src/assets"
         ],
         "styles": ["apps/dashboard/src/styles.scss"],
         "scripts": [],
