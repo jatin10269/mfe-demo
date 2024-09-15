@@ -10,18 +10,12 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 @Component({
   selector: 'app-search',
   standalone: true,
-  imports: [
-    CommonModule,
-    OrderListModule,
-    DragDropModule,
-    HttpClientModule
-  ],
+  imports: [CommonModule, OrderListModule, DragDropModule, HttpClientModule],
   templateUrl: './search.component.html',
   styleUrl: './search.component.scss',
-  providers: [ComponentStore,ProductsStore,HttpClient],
+  providers: [ComponentStore, ProductsStore, HttpClient],
 })
 export class SearchComponent {
-
   constructor(public productsStore: ProductsStore) {}
 
   ngOnInit() {

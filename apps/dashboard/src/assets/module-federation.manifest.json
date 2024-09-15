@@ -1,4 +1,5 @@
 {
   "login": "https://mfe-demo2.onrender.com/apps/login",
-  "product-search": "https://mfe-demo2.onrender.com/apps/product-search"
+  "product-search": "https://mfe-demo2.onrender.com/apps/product-search",
+  "product-detail": "https://mfe-demo2.onrender.com/apps/product-detail"
 }

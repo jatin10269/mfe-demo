@@ -1,0 +1,14 @@
+<div *ngIf="loading$ | async">
+  <p>Loading...</p>
+</div>
+<div *ngIf="error$ | async as error">
+  <p>Error: {{ error }}</p>
+</div>
+<div *ngIf="product$ | async as product; else noProduct">
+  <h1>{{ product?.name }}</h1>
+  <p>{{ product?.description }}</p>
+  <p>Price: {{ product?.price | currency }}</p>
+</div>
+<ng-template #noProduct>
+  <p>No product found.</p>
+</ng-template>
