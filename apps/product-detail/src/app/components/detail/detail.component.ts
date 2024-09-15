@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { ComponentStore } from '@ngrx/component-store';
 import { Product } from 'apps/product-detail/src/model/product';
 import { ProductStore } from 'apps/product-detail/src/store/detail.store';
@@ -20,7 +21,8 @@ export class DetailComponent {
   loaded$: Observable<boolean>;
   error$: Observable<string | undefined>;
 
-  constructor(private productStore: ProductStore) {
+  constructor(private productStore: ProductStore,
+    private route: ActivatedRoute) {
     this.product$ = this.productStore.product$;
     this.loading$ = this.productStore.loading$;
     this.loaded$ = this.productStore.loaded$;
@@ -29,7 +31,8 @@ export class DetailComponent {
 
   ngOnInit() {
     // Replace with the actual product ID
-    const productId = 1000;
-    this.productStore.fetchProduct(productId);
+    this.route.queryParams.subscribe(params => {
+      this.productStore.fetchProduct(params['id']);
+    });
   }
 }

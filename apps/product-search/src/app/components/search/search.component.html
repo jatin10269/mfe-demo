@@ -12,6 +12,7 @@
                   <img
                       src="https://primefaces.org/cdn/primeng/images/demo/product/{{ product.image }}"
                       [alt]="product.name"
+                      (click)="goToDetailApp(product)"
                       class="w-4rem shadow-2 flex-shrink-0 border-round" />
                           <div class="flex-1 flex flex-column gap-2">
                               <span class="font-bold">{{ product.name }}</span>

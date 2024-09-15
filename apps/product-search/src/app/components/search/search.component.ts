@@ -7,6 +7,7 @@ import { OrderListModule } from 'primeng/orderlist';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-search',
   standalone: true,
@@ -16,14 +17,18 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
   providers: [ComponentStore, ProductsStore, HttpClient],
 })
 export class SearchComponent {
-  constructor(public productsStore: ProductsStore) {}
+  constructor(public productsStore: ProductsStore,private router:Router) {}
 
   ngOnInit() {
     // this.productService.getProductsSmall().then((cars) => (this.products = cars));
     // Trigger the loadProducts effect when the component initializes
     this.productsStore.loadProducts();
   }
+  goToDetailApp(product: Product){
+    console.log(product.id);
+    this.router.navigate(['product-detail'],{queryParams:{id:product.id}})
 
+  }
   // getSeverity(status: string) {
   //   switch (status) {
   //     case 'INSTOCK':
