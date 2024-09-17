@@ -9,10 +9,12 @@
     "build": {
       "executor": "@nx/angular:webpack-browser",
       "outputs": ["{options.outputPath}"],
+
       "options": {
         "outputPath": "dist/host/layout",
         "index": "host/layout/src/index.html",
         "main": "host/layout/src/main.ts",
+        "baseHref": "/host/layout/",
         "polyfills": ["zone.js"],
         "tsConfig": "host/layout/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
