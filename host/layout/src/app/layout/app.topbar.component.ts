@@ -1,6 +1,6 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
+import { LayoutService } from 'libs/theme/layout-config/src';
 import { MenuItem } from 'primeng/api';
-import { LayoutService } from "./service/app.layout.service";
 
 @Component({
     selector: 'app-topbar',

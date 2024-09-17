@@ -1,6 +1,6 @@
 import { OnInit } from '@angular/core';
 import { Component } from '@angular/core';
-import { LayoutService } from './service/app.layout.service';
+import { LayoutService } from 'libs/theme/layout-config/src';
 
 @Component({
   selector: 'app-menu',
@@ -26,12 +26,12 @@ export class AppMenuComponent implements OnInit {
           {
             label: 'Product List',
             icon: 'pi pi-fw pi-list',
-            routerLink: ['/products'],
+            routerLink: ['/login'],
           },
           {
             label: 'Cart',
             icon: 'pi pi-fw pi-shopping-cart',
-            routerLink: ['/cart'],
+            routerLink: ['/login'],
           },
         ],
       },

@@ -14,7 +14,11 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@ng-mf/layout-config": ["libs/theme/layout-config/src/index.ts"],
+      "@ng-mf/user-auth": ["libs/data/shared/user-auth/src/index.ts"],
+      "login/Routes": ["remotes/login/src/app/app.routes.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
