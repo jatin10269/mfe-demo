@@ -15,13 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "login/Routes": ["apps/login/src/app/remote-entry/entry.routes.ts"],
-      "product-detail/Routes": [
-        "apps/product-detail/src/app/remote-entry/entry.routes.ts"
-      ],
-      "product-search/Routes": [
-        "apps/product-search/src/app/remote-entry/entry.routes.ts"
-      ]
+      "@ng-mf/layout-config": ["libs/theme/layout-config/src/index.ts"],
+      "@ng-mf/user-auth": ["libs/data/shared/user-auth/src/index.ts"],
+      "login/Routes": ["remotes/login/src/app/app.routes.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
