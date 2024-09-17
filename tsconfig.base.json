@@ -14,15 +14,7 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {
-      "login/Routes": ["apps/login/src/app/remote-entry/entry.routes.ts"],
-      "product-detail/Routes": [
-        "apps/product-detail/src/app/remote-entry/entry.routes.ts"
-      ],
-      "product-search/Routes": [
-        "apps/product-search/src/app/remote-entry/entry.routes.ts"
-      ]
-    }
+    "paths": {}
   },
   "exclude": ["node_modules", "tmp"]
 }

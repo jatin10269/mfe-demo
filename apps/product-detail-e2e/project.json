@@ -1,9 +1,0 @@
-{
-  "name": "product-detail-e2e",
-  "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "projectType": "application",
-  "sourceRoot": "apps/product-detail-e2e/src",
-  "implicitDependencies": ["product-detail"],
-  "// targets": "to see all targets run: nx show project product-detail-e2e --web",
-  "targets": {}
-}
