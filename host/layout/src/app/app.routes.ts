@@ -3,7 +3,6 @@ import { loadRemoteModule } from '@nx/angular/mf';
 import { AppLayoutComponent } from './layout/app.layout.component';
 
 export const appRoutes: Route[] = [
-
   // {
   //   path: 'login',
   //   loadChildren: () =>
@@ -17,7 +16,12 @@ export const appRoutes: Route[] = [
         path: 'login',
         loadChildren: () =>
           loadRemoteModule('login', './Routes').then((m) => m.appRoutes),
-      }
+      },
+      {
+        path: 'products',
+        loadChildren: () =>
+          loadRemoteModule('products', './Routes').then((m) => m.appRoutes),
+      },
     ],
   },
 ];
