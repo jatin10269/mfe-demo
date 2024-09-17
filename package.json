@@ -6,7 +6,7 @@
     "build:dashboard": "npx nx run dashboard:build --configuration=development",
     "build:login": "npx nx run login:build --configuration=development",
     "build:product-search": "npx nx run product-search:build --configuration=development",
-    "build:all": "npx nx run-many --target=build --projects=login,layout --parallel=5"
+    "build:all": "npx nx run-many --target=build --projects=login,layout,products --parallel=5"
   },
   "private": true,
   "dependencies": {
