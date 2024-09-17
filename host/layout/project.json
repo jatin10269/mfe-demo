@@ -31,6 +31,12 @@
       },
       "configurations": {
         "production": {
+          "fileReplacements": [
+            {
+              "replace": "host/layout/src/assets/mainfest/module-federation.manifest.json",
+              "with": "host/layout/src/assets/mainfest/prod/module-federation.manifest.prod.json"
+            }
+          ],
           "budgets": [
             {
               "type": "initial",
@@ -49,6 +55,12 @@
           }
         },
         "development": {
+          "fileReplacements": [
+            {
+              "replace": "host/layout/src/assets/mainfest/module-federation.manifest.json",
+              "with": "host/layout/src/assets/mainfest/prod/module-federation.manifest.prod.json"
+            }
+          ],
           "buildOptimizer": false,
           "optimization": false,
           "vendorChunk": true,
