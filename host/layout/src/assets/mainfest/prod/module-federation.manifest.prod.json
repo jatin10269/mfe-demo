@@ -1,4 +1,5 @@
 {
   "login": "https://mfe-demo2.onrender.com/remotes/login",
-  "products": "https://mfe-demo2.onrender.com/remotes/products"
+  "products": "https://mfe-demo2.onrender.com/remotes/products",
+  "cart": "https://mfe-demo2.onrender.com/remotes/cart"
 }

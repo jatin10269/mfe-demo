@@ -16,10 +16,12 @@
     "baseUrl": ".",
     "paths": {
       "@ng-mf/layout-config": ["libs/theme/layout-config/src/index.ts"],
+      "@ng-mf/ngrx-cart": ["libs/data/ngrx-cart/src/index.ts"],
       "@ng-mf/user-auth": ["libs/data/shared/user-auth/src/index.ts"],
+      "cart/Routes": ["remotes/cart/src/app/app.routes.ts"],
       "login/Routes": ["remotes/login/src/app/app.routes.ts"],
       "products/Routes": [
-        "remotes/products/src/app/remote-entry/entry.routes.ts"
+        "remotes/products/src/app/app.routes.ts"
       ]
     }
   },

@@ -3,16 +3,14 @@ import { Component } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
-import { ToastModule } from 'primeng/toast';
 
 @Component({
   standalone: true,
   imports: [
     RouterModule,
-    CommonModule,
-    ToastModule
+    CommonModule
   ],
-  selector: 'mfe-demo-product-mfe-root',
+  selector: 'mfe-demo-cart-mfe-root',
   templateUrl: './app.component.html',
 })
 export class AppComponent {

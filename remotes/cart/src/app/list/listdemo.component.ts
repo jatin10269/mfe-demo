@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MessageService, SelectItem } from 'primeng/api';
+import { SelectItem } from 'primeng/api';
 import { DataView } from 'primeng/dataview';
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { DataViewModule } from 'primeng/dataview';
@@ -12,11 +11,9 @@ import { DropdownModule } from 'primeng/dropdown';
 import { RatingModule } from 'primeng/rating';
 import { ButtonModule } from 'primeng/button';
 
-import { Product } from '../api/product';
-import { ProductService } from '../service/product.service';
 import { Store } from '@ngrx/store';
-import { CartActions } from 'libs/data/ngrx-cart/src';
-import { ToastModule } from 'primeng/toast';
+import { CartActions, Product, SelectCartList } from 'libs/data/ngrx-cart/src';
+import { Observable } from 'rxjs';
 
 @Component({
   standalone: true,
@@ -31,12 +28,10 @@ import { ToastModule } from 'primeng/toast';
     DropdownModule,
     RatingModule,
     ButtonModule,
-    ToastModule
   ],
-  providers: [ProductService],
 })
 export class ListDemoComponent implements OnInit {
-  products: Product[] = [];
+  products$: Observable<Product[]> = new Observable<Product[]>();
 
   sortOptions: SelectItem[] = [];
 
@@ -50,32 +45,11 @@ export class ListDemoComponent implements OnInit {
 
   orderCities: any[] = [];
 
-  constructor(private productService: ProductService, private store: Store, private messageService: MessageService) {}
+  constructor(private store: Store) {}
 
   ngOnInit() {
-    this.productService.getProducts().then((data) => (this.products = data));
-
-    this.sourceCities = [
-      { name: 'San Francisco', code: 'SF' },
-      { name: 'London', code: 'LDN' },
-      { name: 'Paris', code: 'PRS' },
-      { name: 'Istanbul', code: 'IST' },
-      { name: 'Berlin', code: 'BRL' },
-      { name: 'Barcelona', code: 'BRC' },
-      { name: 'Rome', code: 'RM' },
-    ];
-
-    this.targetCities = [];
-
-    this.orderCities = [
-      { name: 'San Francisco', code: 'SF' },
-      { name: 'London', code: 'LDN' },
-      { name: 'Paris', code: 'PRS' },
-      { name: 'Istanbul', code: 'IST' },
-      { name: 'Berlin', code: 'BRL' },
-      { name: 'Barcelona', code: 'BRC' },
-      { name: 'Rome', code: 'RM' },
-    ];
+    // this.productService.getProducts().then((data) => (this.products = data));
+    this.products$ = this.store.select(SelectCartList);
 
     this.sortOptions = [
       { label: 'Price High to Low', value: '!price' },
@@ -102,8 +76,5 @@ export class ListDemoComponent implements OnInit {
   addToCartStore(product: Product) {
     console.log('Add product to car', product);
     this.store.dispatch(CartActions.addToCart(<any>{product}));
-    this.messageService.add(
-        { severity: 'success', summary: 'Success', detail: 'Product Added to the cart' }
-    )
   }
 }

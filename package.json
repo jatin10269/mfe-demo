@@ -25,6 +25,7 @@
     "@ngrx/entity": "^18.0.2",
     "@ngrx/router-store": "^18.0.2",
     "@ngrx/store": "^18.0.2",
+    "@ngrx/store-devtools": "18.0.2",
     "@nx/angular": "^19.7.3",
     "g": "^2.0.1",
     "primeflex": "^3.3.1",
