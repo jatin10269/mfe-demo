@@ -12,10 +12,8 @@ import { MessageService } from 'primeng/api';
   imports: [
     RouterModule,
     AppLayoutModule,
-    CommonModule,
-    ToastModule
+    CommonModule
   ],
-  providers: [MessageService],
   selector: 'mfe-demo-layout-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

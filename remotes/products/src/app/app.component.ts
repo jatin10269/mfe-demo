@@ -9,8 +9,7 @@ import { ToastModule } from 'primeng/toast';
   standalone: true,
   imports: [
     RouterModule,
-    CommonModule,
-    ToastModule
+    CommonModule
   ],
   selector: 'mfe-demo-product-mfe-root',
   templateUrl: './app.component.html',
