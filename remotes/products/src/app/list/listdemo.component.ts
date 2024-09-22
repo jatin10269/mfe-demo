@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { MessageService, SelectItem } from 'primeng/api';
 import { DataView } from 'primeng/dataview';
 import { NgModule } from '@angular/core';
@@ -50,7 +50,9 @@ export class ListDemoComponent implements OnInit {
 
   orderCities: any[] = [];
 
-  constructor(private productService: ProductService, private store: Store, private messageService: MessageService) {}
+  store: Store = inject(Store);
+
+  constructor(private productService: ProductService, private messageService: MessageService) {}
 
   ngOnInit() {
     this.productService.getProducts().then((data) => (this.products = data));

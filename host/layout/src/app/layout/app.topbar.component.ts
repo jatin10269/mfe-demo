@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, inject, ViewChild } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { SelectCartList } from 'libs/data/ngrx-cart/src';
 import { LayoutService } from 'libs/theme/layout-config/src';
@@ -21,7 +21,9 @@ export class AppTopBarComponent {
 
     cartItemsCount = 0;
 
-    constructor(public layoutService: LayoutService, private store: Store) {
+    store: Store = inject(Store);
+
+    constructor(public layoutService: LayoutService) {
       this.store.select(SelectCartList).pipe(
         tap(products => {
           this.cartItemsCount = products.length ?? 0;
