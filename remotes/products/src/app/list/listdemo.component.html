@@ -2,7 +2,7 @@
 <div class="grid">
   <div class="col-12">
     <div class="card">
-      <h5>Product List MFE</h5>
+      <h5 id="PRODUCT__header">Product List MFE</h5>
       <p-dataView
         #dv
         [value]="products"
@@ -12,6 +12,7 @@
         [sortField]="sortField"
         [sortOrder]="sortOrder"
         layout="grid"
+        [id]="'PRODUCT_DATA_VIEW'"
       >
         <ng-template pTemplate="header">
           <div
@@ -21,6 +22,8 @@
               [options]="sortOptions"
               placeholder="Sort By Price"
               (onChange)="onSortChange($event)"
+              id="PRODUCT_SORT_DD"
+              inputId="PRODUCT_SORT_DD__input"
             ></p-dropdown>
             <span class="p-input-icon-left">
               <i class="pi pi-search"></i>
@@ -29,14 +32,17 @@
                 pInputText
                 placeholder="Search by Name"
                 (input)="onFilter(dv, $event)"
+                id="PRODUCT_SEARCH__input"
               />
             </span>
-            <p-dataViewLayoutOptions></p-dataViewLayoutOptions>
+            <p-dataViewLayoutOptions
+              [id]="'PRODUCT_DATA_VIEW_LAYOUT__options'"
+            ></p-dataViewLayoutOptions>
           </div>
         </ng-template>
 
         <ng-template let-products pTemplate="listItem">
-          <div class="col-12" *ngFor="let product of products">
+          <div class="col-12" *ngFor="let product of products; let i = index">
             <div
               class="flex flex-column md:flex-row align-items-center p-3 w-full"
             >
@@ -74,12 +80,14 @@
                   [disabled]="product.inventoryStatus === 'OUTOFSTOCK'"
                   (onClick)="addToCartStore(product)"
                   styleClass="mb-2 p-button-sm"
+                  [id]="'PRODUCT_' + i + '__ADD_TO_CART__button'"
                 ></p-button>
                 <span
                   [class]="
                     'product-badge status-' +
                     product.inventoryStatus.toLowerCase()
                   "
+                  [id]="'PRODUCT_' + i + '__invetory_status'"
                   >{{ product.inventoryStatus }}</span
                 >
               </div>
@@ -89,7 +97,10 @@
 
         <ng-template let-products pTemplate="gridItem">
           <div class="grid grid-nogutter">
-            <div class="col-12 md:col-4" *ngFor="let product of products">
+            <div
+              class="col-12 md:col-4"
+              *ngFor="let product of products; let i = index"
+            >
               <div class="card m-3 border-1 surface-border">
                 <div
                   class="flex flex-wrap gap-2 align-items-center justify-content-between mb-2"
@@ -103,6 +114,7 @@
                       'product-badge status-' +
                       product.inventoryStatus.toLowerCase()
                     "
+                    [id]="'PRODUCT_' + i + '__invetory_status'"
                     >{{ product.inventoryStatus }}</span
                   >
                 </div>
@@ -130,6 +142,7 @@
                     icon="pi pi-shopping-cart"
                     [disabled]="product.inventoryStatus === 'OUTOFSTOCK'"
                     (onClick)="addToCartStore(product)"
+                    [id]="'PRODUCT_' + i + '__ADD_TO_CART__button'"
                   ></p-button>
                 </div>
               </div>

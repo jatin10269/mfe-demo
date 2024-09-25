@@ -27,11 +27,13 @@ export class AppMenuComponent implements OnInit {
             label: 'Product List',
             icon: 'pi pi-fw pi-list',
             routerLink: ['/products'],
+            id: 'PRODUCTS__menu'
           },
           {
             label: 'Cart',
             icon: 'pi pi-fw pi-shopping-cart',
             routerLink: ['/cart'],
+            id: 'CART__menu'
           },
         ],
       },
