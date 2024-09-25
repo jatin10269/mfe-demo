@@ -13,11 +13,13 @@ export const appConfig: ApplicationConfig = {
     provideRouter(appRoutes, withHashLocation()),
     provideAnimations(),
     provideHttpClient(),
-    provideStore(),
-    provideState({
-      name: productCartFeature.name,
-      reducer: productCartFeature.reducer
+    provideStore({
+      [productCartFeature.name]: productCartFeature.reducer
     }),
+    // provideState({
+    //   name: productCartFeature.name,
+    //   reducer: productCartFeature.reducer
+    // }),
     provideStoreDevtools({
       maxAge: 25
     })
