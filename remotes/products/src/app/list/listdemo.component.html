@@ -5,7 +5,7 @@
       <h5 id="PRODUCT__header">Product List MFE</h5>
       <p-dataView
         #dv
-        [value]="products"
+        [value]="productStore.products()"
         [paginator]="true"
         [rows]="9"
         filterBy="name"

@@ -28,6 +28,11 @@ export const appRoutes: Route[] = [
         loadChildren: () =>
           loadRemoteModule('cart', './Routes').then((m) => m.appRoutes),
       },
+      {
+        path: 'product-detail',
+        loadChildren: () =>
+          loadRemoteModule('product-detail', './Routes').then((m) => m.remoteRoutes),
+      },
     ],
   },
 ];

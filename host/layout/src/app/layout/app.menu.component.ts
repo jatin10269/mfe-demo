@@ -35,6 +35,12 @@ export class AppMenuComponent implements OnInit {
             routerLink: ['/cart'],
             id: 'CART__menu'
           },
+          {
+            label: 'Product-detail',
+            icon: 'pi pi-fw pi-shopping-cart',
+            routerLink: ['/product-detail'],
+            id: 'product-detail'
+          },
         ],
       },
     ];

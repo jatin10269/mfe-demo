@@ -20,9 +20,10 @@
       "@ng-mf/user-auth": ["libs/data/shared/user-auth/src/index.ts"],
       "cart/Routes": ["remotes/cart/src/app/app.routes.ts"],
       "login/Routes": ["remotes/login/src/app/app.routes.ts"],
-      "products/Routes": [
-        "remotes/products/src/app/app.routes.ts"
-      ]
+      "product-detail/Routes": [
+        "remotes/product-detail/src/app/remote-entry/entry.routes.ts"
+      ],
+      "products/Routes": ["remotes/products/src/app/app.routes.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

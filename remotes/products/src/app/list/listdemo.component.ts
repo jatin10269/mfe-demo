@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core';
 import { MessageService, SelectItem } from 'primeng/api';
 import { DataView } from 'primeng/dataview';
 import { NgModule } from '@angular/core';
@@ -17,6 +17,7 @@ import { ProductService } from '../service/product.service';
 import { Store } from '@ngrx/store';
 import { CartActions } from 'libs/data/ngrx-cart/src';
 import { ToastModule } from 'primeng/toast';
+import { ProductStore } from '../store/product.store';
 
 @Component({
   standalone: true,
@@ -33,7 +34,9 @@ import { ToastModule } from 'primeng/toast';
     ButtonModule,
     ToastModule
   ],
-  providers: [ProductService, MessageService],
+  providers: [ProductService, MessageService,ProductStore],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+
 })
 export class ListDemoComponent implements OnInit {
   products: Product[] = [];
@@ -51,10 +54,12 @@ export class ListDemoComponent implements OnInit {
   orderCities: any[] = [];
 
   store: Store = inject(Store);
+  readonly productStore = inject(ProductStore);
 
   constructor(private productService: ProductService, private messageService: MessageService) {}
 
   ngOnInit() {
+    this.productStore.loadProducts();
     this.productService.getProducts().then((data) => (this.products = data));
 
     this.sourceCities = [
