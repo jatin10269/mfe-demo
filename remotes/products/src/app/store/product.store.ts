@@ -25,7 +25,6 @@ const initialState: ProductState = {
 };
 
 export const ProductStore = signalStore(
-  { providedIn: 'root' },
   withState(initialState),
   withComputed(({ products, filter }) => ({
     productsCount: computed(() => products().length),
