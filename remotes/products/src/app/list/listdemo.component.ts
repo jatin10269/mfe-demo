@@ -33,7 +33,7 @@ import { ToastModule } from 'primeng/toast';
     ButtonModule,
     ToastModule
   ],
-  providers: [ProductService, MessageService],
+  providers: [ProductService, MessageService,Store],
 })
 export class ListDemoComponent implements OnInit {
   products: Product[] = [];
